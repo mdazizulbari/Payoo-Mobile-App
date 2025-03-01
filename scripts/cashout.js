@@ -1,18 +1,20 @@
 document
-  .getElementById("add-money")
+  .getElementById("cash-out-btn")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    const accountNumber = document.getElementById("account-number").value;
-    const amount = document.getElementById("amount").value;
+    // console.log("cash")
+    const accountNumber = document.getElementById("cashout-account-number").value;
+    const amount = document.getElementById("cashout-amount").value;
     const convertedAmount = Number(amount);
-    const pin = document.getElementById("pin").value;
+    const pin = document.getElementById("cashout-pin").value;
     const convertedPin = Number(pin);
     const mainBalance = document.getElementById("main-balance").innerText;
     const convertedMainBalance = Number(mainBalance);
     if (accountNumber.length === 11) {
       if (convertedPin === 1234) {
-        const newMainBalance = convertedMainBalance + convertedAmount;
+        const newMainBalance = convertedMainBalance - convertedAmount;
         document.getElementById("main-balance").innerText = newMainBalance;
+        // console.log(mainBalance, newMainBalance)
       } else {
         alert("Enter correct Pin");
       }

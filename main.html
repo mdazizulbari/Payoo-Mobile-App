@@ -17,7 +17,9 @@
         <nav class="flex justify-around items-center">
           <img src="assets/Group.png" alt="" />
           <div class="">
-            <h3 class="text-3xl font-bold">$<span id="main-balance">4500</span></h3>
+            <h3 class="text-3xl font-bold">
+              $<span id="main-balance">4500</span>
+            </h3>
             <p class="border rounded p-1">Available Balance</p>
           </div>
           <button class="btn">Logout</button>
@@ -31,11 +33,11 @@
           is low and good service
         </p>
         <div class="cards grid grid-cols-3 mt-14 gap-2 p-2">
-          <div class="box border p-4 text-center rounded-sm">
+          <div id="add-money-box" class="box border p-4 text-center rounded-sm">
             <img class="w-8 mx-auto" src="assets/wallet1.png" alt="" />
             <h4>Add Money</h4>
           </div>
-          <div class="box border p-4 text-center rounded-sm">
+          <div id="cash-out-box" class="box border p-4 text-center rounded-sm">
             <img class="w-8 mx-auto" src="assets/purse1.png" alt="" />
             <h4>Cash Out</h4>
           </div>
@@ -60,10 +62,15 @@
         </div>
       </section>
       <!-- Add Money section -->
-      <section>
+      <section id="add-money-section">
         <div class="">
           <div class="hero-content flex-col lg:flex-row-reverse">
             <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+              <h2
+                class="text-center text-2xl font-bold text-blue-700 mt-5 -mb-5"
+              >
+                Add Money
+              </h2>
               <form class="card-body">
                 <fieldset class="fieldset">
                   <fieldset class="fieldset">
@@ -114,7 +121,60 @@
           </div>
         </div>
       </section>
+
+      <!-- Cash Out section -->
+      <section id="cash-out-section">
+        <div class="">
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+              <h2
+                class="text-center text-2xl font-bold text-blue-700 mt-5 -mb-5"
+              >
+                Cash Out
+              </h2>
+              <form class="card-body">
+                <fieldset class="fieldset">
+                  <label class="fieldset-label">Account Number</label>
+                  <input
+                    value="64616465465"
+                    id="account-number"
+                    type="number"
+                    class="input"
+                    placeholder="Type your number"
+                    required
+                  />
+                  <label class="fieldset-label">Amount</label>
+                  <input
+                    id="amount"
+                    type="number"
+                    class="input"
+                    placeholder="Type your amount"
+                    required
+                  />
+                  <label class="fieldset-label">Pin</label>
+                  <input
+                    value="1234"
+                    id="pin"
+                    type="text"
+                    class="input"
+                    placeholder="Password"
+                    required
+                  />
+                  <div><a class="link link-hover">Forgot password?</a></div>
+                  <button
+                    id="add-money"
+                    class="btn btn-neutral mt-4 bg-blue-700 border-none"
+                  >
+                    Add Money
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
     <script src="scripts/main.js"></script>
+    <script src="scripts/toggle.js"></script>
   </body>
 </html>

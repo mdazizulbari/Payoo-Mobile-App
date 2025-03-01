@@ -15,12 +15,21 @@ document
     const mainBalance = getInnerTextByID("main-balance");
     // const mainBalance = document.getElementById("main-balance").innerText;
     // const convertedMainBalance = Number(mainBalance);
+    if (amount > mainBalance) {
+      alert("Your balance is less than that!");
+      return;
+    }
     if (accountNumber.length === 11) {
       if (pin === 1234) {
         const newMainBalance = mainBalance - amount;
         setInnerTextByIDandValue("main-balance", newMainBalance);
-        console.log(newMainBalance, mainBalance, amount);
         // document.getElementById("main-balance").innerText = newMainBalance;
+        const transactionContainer = document.getElementById(
+          "transaction-container"
+        );
+        const p = document.createElement("p");
+        p.innerText = `cashout ${amount} from this ${accountNumber} account.`;
+        transactionContainer.appendChild(p);
       } else {
         alert("Enter correct Pin");
       }

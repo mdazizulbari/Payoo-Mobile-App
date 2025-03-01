@@ -61,7 +61,10 @@
             <img class="w-8 mx-auto" src="assets/bonus1.png" alt="" />
             <h4>Get Bonus</h4>
           </div>
-          <div class="box bg-white p-4 text-center rounded-2xl">
+          <div
+            id="transaction-box"
+            class="box bg-white p-4 text-center rounded-2xl"
+          >
             <img class="w-8 mx-auto" src="assets/transaction1.png" alt="" />
             <h4>Transaction History</h4>
           </div>
@@ -81,7 +84,7 @@
                 <fieldset class="fieldset">
                   <fieldset class="fieldset">
                     <legend class="fieldset-legend">Select Bank</legend>
-                    <select class="select">
+                    <select id="selected-bank" class="select">
                       <option disabled selected>Choose your Bank</option>
                       <option value="bkash">Bkash</option>
                       <option value="nagad">Nagad</option>
@@ -127,7 +130,6 @@
           </div>
         </div>
       </section>
-
       <!-- Cash Out section -->
       <section id="cash-out-section">
         <div class="">
@@ -179,10 +181,18 @@
           </div>
         </div>
       </section>
+      <!-- transaction history section -->
+      <section id="transaction-section">
+        <h2 class="text-3xl font-bold text-center text-blue-700 p-3">
+          Transaction History
+        </h2>
+        <div id="transaction-container"></div>
+      </section>
     </section>
     <script src="utilities/utilities.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/toggle.js"></script>
     <script src="scripts/cashout.js"></script>
+    <script src="scripts/transaction.js"></script>
   </body>
 </html>

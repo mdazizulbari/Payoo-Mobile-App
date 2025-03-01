@@ -13,11 +13,27 @@ document
     // const mainBalance = document.getElementById("main-balance").innerText;
     const mainBalance = getInnerTextByID("main-balance");
     // const convertedMainBalance = Number(mainBalance);
+    const selectedBank = document.getElementById("selected-bank").value;
+    if (amount < 0) {
+      alert("You must ender positive number!");
+      return;
+    }
     if (accountNumber.length === 11) {
       if (pin === 1234) {
         const newMainBalance = mainBalance + amount;
         setInnerTextByIDandValue("main-balance", newMainBalance);
         // document.getElementById("main-balance").innerText = newMainBalance;
+
+        const transactionContainer = document.getElementById(
+          "transaction-container"
+        );
+        const allTransactions = document.createElement("div");
+        allTransactions.innerHTML = `
+        <h2 class="font-bold">Added ${amount} from ${selectedBank}</h2>
+        <p>Account Number: ${accountNumber}</p>
+        <br>
+        `;
+        transactionContainer.appendChild(allTransactions);
       } else {
         alert("Enter correct Pin");
       }

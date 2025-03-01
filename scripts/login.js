@@ -4,5 +4,15 @@ document
   .getElementById("login-btn")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    console.log("yo")
+    const accountNumber = document.getElementById("account-number").value;
+    const pin = document.getElementById("pin").value;
+    if (accountNumber.length === 11) {
+      if (pin === "1234") {
+        window.location.href = "main.html";
+      } else {
+        alert("Enter correct Pin");
+      }
+    } else {
+      alert("Enter valid Account Number");
+    }
   });
